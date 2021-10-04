@@ -1,7 +1,8 @@
 ! using SGEEV to diagonalize Nonsymmetric matrix A.
 ! taken from https://web.cs.ucdavis.edu/~bai/publications/baidemmeletal06.pdf
 !
-!
+! For detail about LAPACK functions, please refer to
+! http://netlib.org/lapack/explore-html/index.html 
 !cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 program main
 implicit none

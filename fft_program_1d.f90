@@ -42,6 +42,11 @@
 !
 !For reference, see numpy.fft.fftfreq() function in python.
 !cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+!
+!Example taken from:
+!https://homepage.ntu.edu.tw/~wttsai/fortran/ppt/14.Fast_Fourier_Transform.pdf
+!
+!
 program example_fftw
 ! Example to call 1-D real FFT routine of FFTW
 implicit none

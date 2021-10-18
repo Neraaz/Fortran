@@ -66,10 +66,10 @@ end
 
 !cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 !Generating Gauss rule using Golub Welsch method. Any set of polynomials
-!{Pj(x)}_(j=1,N) satisfies a 3 term recurrence relation. 
+!{Pj(x)}_(j=0,N-1) satisfies a 3 term recurrence relation. 
 ! Pj+1(x) = (aj*x + bj)Pj(x) - cj*Pj-1(x) with P0(x) = 1 and P1(x) = A0*x + B0
 ! Where aj, bj, and cj are defined as (https://dlmf.nist.gov/18.9)
-!
+! for j=0 to N-1
 ! Table
 !Polynomial                 aj              bj              cj     mu0
 !  type

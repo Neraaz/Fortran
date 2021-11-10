@@ -10,20 +10,23 @@
 program main
 implicit double precision (a-h,o-z)
 integer i
-real(kind=8) xmat(10,10),eig(10),wi(10),xvec(10,10)
+integer, parameter :: n=100
+real(kind=8) xmat(n,n),eig(n),wi(n),xvec(n,n)
 real(kind=8) rslt
-call GWmat(10,xmat,'gleg')
-call diagonalize(10,100,xmat,eig,wi,xvec)
+call GWmat(n,xmat,'gleg')
+call diagonalize(n,n*n,xmat,eig,wi,xvec)
 !call GolWel(10,xt,wt,'gleg')
 !real(kind=8) rslt1, rslt2, rslt3
 !a = aj(1,'gleg')
 !external func
 !call ser(1.d0,2.0d0,1000,f)
 !write(*,*) 'array: ',f
-do i=1,10   !printing grid points and corresponding weights.
-write(*,*) "", eig(i),2.d0*xvec(1,i)**2.d0
+open(1, file='grid.dat', status='new')
+do i=1,n   !printing grid points and corresponding weights.
+write(1,*) eig(i), 2.d0*xvec(1,i)**2.d0
 enddo
-call qgaus(1.d0,2.d0,10,rslt,'gleg')
+close(1)
+call qgaus(1.d0,2.d0,n,rslt,'gleg')
 write(*,*), "Integration: ", rslt
 return
 end program
@@ -33,7 +36,7 @@ end program
 !ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 Double Precision Function func(x)
 implicit double precision (a-h,o-z)
-func=dsin(x)
+func=dsin(dcos(x))
 return
 end
 
